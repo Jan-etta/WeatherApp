@@ -1,0 +1,84 @@
+h1 {
+    font-family: "Montserrat", sans-serif;
+    color: rgb(66, 165, 245);
+    font-size: 400%;
+    position: relative;
+    bottom: 12px;
+    right: 3px;
+}
+
+.card-setting {
+    padding: 0;
+    flex-wrap: nowrap;
+}
+
+.float-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    margin: -250px 0 0 -250px;
+}
+
+.dates {
+    text-align: center;
+    padding: 20px 20px 0 20px;
+}
+
+.temp {
+    text-align: center;
+    padding: 0 20px 20px 20px;
+    font-size: 10px;
+}
+
+.today-temp {
+    color: rgb(66, 165, 245);
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+.cities {
+    font-family: "Montserrat", sans-serif;
+    margin: 0 0 0 26px;
+    padding-top: 0px;
+    font-size: 30px;
+}
+
+.search-bar {
+    padding-left: 20px;
+}
+
+.current-time {
+    font-size: 20px;
+}
+
+.search-icon {
+    padding-right: 5px;
+}
+
+.city-today-temp {
+    padding-bottom: 10px;
+}
+
+button {
+    color: rgb(66, 165, 245);
+    background: rgba(0, 0, 0, 0);
+    border-radius: 3px;
+    border-width: 1px;
+    transition: all 200ms ease-in-out;
+}
+
+button:hover {
+    color: white;
+    background: rgba(66, 165, 245, 0.5);
+}
+
+img {
+    width: 40px;
+}
+
+#current-location-button {
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+}

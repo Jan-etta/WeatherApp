@@ -42,8 +42,19 @@ function showTemp(response) {
     let temperature = Math.round(response.data.main.temp);
     let todaysTemp = document.querySelector("#todays-temp");
     todaysTemp.innerHTML = `${temperature}°c`;
-    let city = document.querySelector("h2");
+    let city = document.querySelector("h1");
     city.innerHTML = response.data.name;
+    console.log(response.data);
+    //description
+    let descriptionElement = document.querySelector("#description");
+    descriptionElement.innerHTML = response.data.weather[0].description;
+    let humidityElement = document.querySelector("#humidity");
+    humidityElement.innerHTML = `Humidity: ${Math.round(
+    response.data.main.humidity
+  )}  %`;
+    let windElement = document.querySelector("#wind");
+    windElement.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
+    console.log(response);
 }
 //geolocation
 function retrievePosition(position) {

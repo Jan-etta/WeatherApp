@@ -79,6 +79,7 @@ img {
 
 #current-location-button {
     text-align: center;
+    display: block;
     margin: 0 auto;
     position: relative;
 }

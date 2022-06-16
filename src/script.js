@@ -45,7 +45,7 @@ function showTemp(response) {
     let city = document.querySelector("h2");
     city.innerHTML = response.data.name;
 }
-//get location
+//geolocation
 function retrievePosition(position) {
     let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
     let lat = position.coords.latitude;

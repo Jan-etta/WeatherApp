@@ -53,7 +53,7 @@ h1 {
 }
 
 .search-icon {
-    padding-right: 5px;
+    padding-right: 6px;
 }
 
 .city-today-temp {
@@ -79,7 +79,6 @@ img {
 
 #current-location-button {
     text-align: center;
-    display: block;
-    margin: 0 auto;
-    position: relative;
+    margin: 10px 0 10px 22px;
+    padding: 1px 30px;
 }

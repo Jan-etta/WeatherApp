@@ -24,6 +24,12 @@ img {
     width: 40px;
 }
 
+ul {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
 .card-setting {
     padding: 0;
     flex-wrap: nowrap;
@@ -52,6 +58,7 @@ img {
     color: rgb(66, 165, 245);
     font-weight: bolder;
     font-size: 25px;
+    text-align: center;
 }
 
 .weather-description {
@@ -59,6 +66,7 @@ img {
     margin: 0 0 0 26px;
     padding-top: 0px;
     font-size: 20px;
+    text-transform: capitalize;
 }
 
 .search-bar {
@@ -91,6 +99,21 @@ img {
     padding: 1px 30px;
 }
 
-.unit-converter {
-    font-size: 15px;
+.units {
+    text-decoration: none;
+    color: rgb(66, 165, 245);
+    padding: 0 10px;
+}
+
+#celcius {
+    text-decoration: none;
+    color: rgb(66, 165, 245);
+    padding: 0 10px;
+    margin-left: 10px;
+}
+
+#fahrenheit {
+    text-decoration: none;
+    color: rgb(66, 165, 245);
+    padding: 0 8px;
 }

@@ -67,7 +67,7 @@ function showTemp(response) {
     function convertC(event) {
         event.preventDefault();
         let temperatureElement = document.querySelector("#todays-temp");
-        temperatureElement.innerHTML = Math.round(response.data.main.temp);
+        temperatureElement.innerHTML = temperature;
     }
     let celcius = document.querySelector("#celcius");
     celcius.addEventListener("click", convertC);

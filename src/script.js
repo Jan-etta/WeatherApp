@@ -67,3 +67,5 @@ function retrievePosition(position) {
 let getLocation = document.querySelector("#current-location-button");
 getLocation.addEventListener("submit", retrievePosition);
 navigator.geolocation.getCurrentPosition(retrievePosition);
+
+searchCity("Birmingham, uk");

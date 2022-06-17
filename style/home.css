@@ -77,6 +77,14 @@ img {
     width: 40px;
 }
 
+.credit {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    width: 500px;
+    margin: 200px 0 0 -250px;
+}
+
 #current-location-button {
     text-align: center;
     margin: 10px 0 10px 22px;

@@ -55,6 +55,23 @@ function showTemp(response) {
     let windElement = document.querySelector("#wind");
     windElement.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
     console.log(response);
+    //unit convertor
+    function convertF(event) {
+        event.preventDefault();
+        let temperatureElement = document.querySelector("#todays-temp");
+        let temperature = temperatureElement.innerHTML;
+        temperatureElement.innerHTML = Math.round(temperature * 1.8 + 32);
+    }
+    let fahrenheit = document.querySelector("#fahrenheit");
+    fahrenheit.addEventListener("click", convertF);
+
+    function convertC(event) {
+        event.preventDefault();
+        let temperatureElement = document.querySelector("#todays-temp");
+        temperatureElement.innerHTML = Math.round(response.data.main.temp);
+    }
+    let celcius = document.querySelector("#celcius");
+    celcius.addEventListener("click", convertC);
 }
 //geolocation
 function retrievePosition(position) {

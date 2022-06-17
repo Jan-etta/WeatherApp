@@ -7,6 +7,23 @@ h1 {
     right: 3px;
 }
 
+button {
+    color: rgb(66, 165, 245);
+    background: rgba(0, 0, 0, 0);
+    border-radius: 3px;
+    border-width: 1px;
+    transition: all 200ms ease-in-out;
+}
+
+button:hover {
+    color: white;
+    background: rgba(66, 165, 245, 0.5);
+}
+
+img {
+    width: 40px;
+}
+
 .card-setting {
     padding: 0;
     flex-wrap: nowrap;
@@ -58,23 +75,6 @@ h1 {
 
 .city-today-temp {
     padding-bottom: 10px;
-}
-
-button {
-    color: rgb(66, 165, 245);
-    background: rgba(0, 0, 0, 0);
-    border-radius: 3px;
-    border-width: 1px;
-    transition: all 200ms ease-in-out;
-}
-
-button:hover {
-    color: white;
-    background: rgba(66, 165, 245, 0.5);
-}
-
-img {
-    width: 40px;
 }
 
 .credit {

@@ -59,7 +59,6 @@ function showTemp(response) {
     function convertF(event) {
         event.preventDefault();
         let temperatureElement = document.querySelector("#todays-temp");
-        let temperature = temperatureElement.innerHTML;
         temperatureElement.innerHTML = Math.round(temperature * 1.8 + 32);
     }
     let fahrenheit = document.querySelector("#fahrenheit");

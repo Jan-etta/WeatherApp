@@ -94,6 +94,39 @@ function showTemp(response) {
     todaysTemp.innerHTML = `${temperature}°c`;
     findCity(city);
 }
+//weather icon
+function weatherIcon() {
+    let icon = response.data.weather[0].icon;
+    if (icon === "01d") {
+        document
+            .getElementByClassName("#weatherIcon")
+            .classList.add(" fa-solid fa-cloud-showers-heavy ");
+    } else if (icon === "02d") {
+        document
+            .getElementByClassName("#weatherIcon")
+            .classList.add(" fa-solid fa-cloud-showers-heavy ");
+    } else if (icon === "03d") {
+        document
+            .getElementByClassName("#weatherIcon")
+            .classList.add(" fa-solid fa-cloud-showers-heavy ");
+    } else if (icon === "04d") {
+        document
+            .getElementByClassName("#weatherIcon")
+            .classList.add(" fa-solid fa-cloud-showers-heavy ");
+    } else if (icon === "09d") {
+        document
+            .getElementByClassName("#weatherIcon")
+            .classList.add(" fa-solid fa-cloud-showers-heavy ");
+    } else if (icon === "11d") {
+        document
+            .getElementByClassName("#weatherIcon")
+            .classList.add(" fa-solid fa-cloud-showers-heavy ");
+    } else if (icon === "50d") {
+        document
+            .getElementByClassName("#weatherIcon")
+            .classList.add(" fa-solid fa-cloud-showers-heavy ");
+    }
+}
 
 function searchCity(city) {
     let units = "metric";

@@ -83,13 +83,16 @@ function showTemp(response) {
 
 function retrievePosition(position) {
     let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-    let lat = position.coords.latitude;
     let lon = position.coords.longitude;
+    let lat = position.coords.latitude;
     let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
     axios.get(url).then(showTemp);
 }
-let getLocation = document.querySelector("#current-location-button");
-getLocation.addEventListener("click", retrievePosition);
-navigator.geolocation.getCurrentPosition(retrievePosition);
 
+function getPosition(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(retrievePosition);
+}
+let getLocation = document.querySelector("#current-location-button");
+getLocation.addEventListener("click", getPosition);
 searchCity("London");

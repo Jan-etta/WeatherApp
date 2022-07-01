@@ -69,6 +69,10 @@ ul {
     text-transform: capitalize;
 }
 
+.minimum-temp {
+    opacity: 0.5;
+}
+
 .search-bar {
     padding-left: 20px;
 }

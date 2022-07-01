@@ -90,11 +90,9 @@ ul {
 }
 
 .credit {
-    position: absolute;
-    top: 35%;
-    left: 50%;
+    display: block;
+    position: relative;
     width: 500px;
-    margin: 200px 0 0 -250px;
 }
 
 #current-location-button {
@@ -120,4 +118,11 @@ ul {
     text-decoration: none;
     color: rgb(66, 165, 245);
     padding: 0 8px;
+}
+
+#five-day-forecast {
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: center;
+    margin: 10px;
 }

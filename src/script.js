@@ -1,5 +1,4 @@
 let now = new Date();
-
 let days = [
     "Sunday",
     "Monday",
@@ -9,7 +8,6 @@ let days = [
     "Friday",
     "Saturday",
 ];
-
 let hour = now.getHours();
 let minute = now.getMinutes();
 let todayDay = days[now.getDay()];
@@ -17,16 +15,16 @@ if (minute < 10) {
     minute = `0${minute}`;
 }
 let currentDay = document.querySelector("#day");
-currentDay.innerHTML = ` ${todayDay}`;
-
 let currentTime = document.querySelector("#time");
+let cityForm = document.querySelector("#city-form");
+cityForm.addEventListener("submit", form);
+currentDay.innerHTML = ` ${todayDay}`;
 currentTime.innerHTML = ` ${hour}:${minute}`;
 
 function formatDay(timestamp) {
     let date = new Date(timestamp * 1000);
     let day = date.getDay();
     let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
     return days[day];
 }
 
@@ -34,7 +32,6 @@ function displayForecast(response) {
     console.log(response.data.daily);
     let forecast = response.data.daily;
     let forecastElement = document.querySelector("#five-day-forecast");
-
     let forecastHTML = `<div class="row">`;
     forecast.forEach(function(forecastDay, index) {
         if (index < 5) {
@@ -61,11 +58,10 @@ function displayForecast(response) {
   `;
         }
     });
-
     forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
 }
-//wk5
+
 function form(event) {
     event.preventDefault();
     let input = document.querySelector("#city-form-input");
@@ -78,9 +74,6 @@ function searchCity(city) {
     axios.get(api).then(showTemp);
 }
 
-let cityForm = document.querySelector("#city-form");
-cityForm.addEventListener("submit", form);
-
 function getForecast(coordinates) {
     console.log(coordinates);
     let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
@@ -92,17 +85,20 @@ function showTemp(response) {
     getForecast(response.data.coord);
     let temperature = Math.round(response.data.main.temp);
     let todaysTemp = document.querySelector("#todays-temp");
-    todaysTemp.innerHTML = `${temperature}°c`;
     let city = document.querySelector("h1");
-    city.innerHTML = response.data.name;
-    //description
     let descriptionElement = document.querySelector("#description");
-    descriptionElement.innerHTML = response.data.weather[0].description;
     let humidityElement = document.querySelector("#humidity");
+    let windElement = document.querySelector("#wind");
+    let fahrenheit = document.querySelector("#fahrenheit");
+    let celcius = document.querySelector("#celcius");
+    celcius.addEventListener("click", convertC);
+    fahrenheit.addEventListener("click", convertF);
+    todaysTemp.innerHTML = `${temperature}°c`;
+    city.innerHTML = response.data.name;
+    descriptionElement.innerHTML = response.data.weather[0].description;
     humidityElement.innerHTML = `Humidity: ${Math.round(
     response.data.main.humidity
   )}  %`;
-    let windElement = document.querySelector("#wind");
     windElement.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
     //unit convertor
     function convertF(event) {
@@ -110,17 +106,12 @@ function showTemp(response) {
         let temperatureElement = document.querySelector("#todays-temp");
         temperatureElement.innerHTML = Math.round(temperature * 1.8 + 32);
     }
-    let fahrenheit = document.querySelector("#fahrenheit");
-    fahrenheit.addEventListener("click", convertF);
 
     function convertC(event) {
         event.preventDefault();
         let temperatureElement = document.querySelector("#todays-temp");
         temperatureElement.innerHTML = temperature;
     }
-    let celcius = document.querySelector("#celcius");
-    celcius.addEventListener("click", convertC);
-
     //icon
     let iconElement = document.querySelector("#icon");
     iconElement.setAttribute(
